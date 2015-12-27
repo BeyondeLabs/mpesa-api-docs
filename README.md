@@ -2,6 +2,8 @@
 
 This is the _unoffocial_ documentation for the MPesa API. Most part of this documentation is a duplication of [Safaricom's documentation which is in PDF](http://www.safaricom.co.ke/images/Downloads/Resources_Downloads/M-PESA_API_Guide_download.zip).
 
+The HTML version of the docs can be at [beyondelabs.github.io/mpesa-api-docs](http://beyondelabs.github.io/mpesa-api-docs/)
+
 ## Preamble
 
 From [Safaricom's website](http://www.safaricom.co.ke/business/corporate/m-pesa-payments-services/m-pesa-api):
