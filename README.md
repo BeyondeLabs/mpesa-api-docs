@@ -11,7 +11,7 @@ From [Safaricom's website](http://www.safaricom.co.ke/business/corporate/m-pesa-
 
 ## Call for Collaboration
 
-We believe: it takes a village.
+You know, it takes a village.
 
 ### How to Contribute
 - Fork this repo
