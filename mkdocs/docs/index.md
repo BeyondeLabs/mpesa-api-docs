@@ -1,0 +1,6 @@
+This is the _unoffocial_ documentation for the MPesa API. Most part of this documentation is a duplication of [Safaricom's documentation which is in PDF](http://www.safaricom.co.ke/images/Downloads/Resources_Downloads/M-PESA_API_Guide_download.zip).
+
+## Preamble
+
+From [Safaricom's website](http://www.safaricom.co.ke/business/corporate/m-pesa-payments-services/m-pesa-api):
+>  _The new M-PESA platform dubbed G2 (for M-PESA 2nd generation platform) offers versatile integration capabilities that our development partners can take advantage of, to create excellent M-PESA journeys across the different industries they serve. This was a key factor in moving to the new platform. We have been consolidating the different interfaces our developers have expressed interest in to enable innovation around M-PESA. As expected, most of these are about the payment journeys, covering both disbursements (Business to Customers – B2C) and service payments (Customer to Business – C2B and Business to Business – B2B). These and other features are now available via secure Application Programming Interfaces (APIs) that allow for third party applications to easily plug into M-PESA._ 
