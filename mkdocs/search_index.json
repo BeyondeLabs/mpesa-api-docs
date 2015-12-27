@@ -1,0 +1,54 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "This is the \nunoffocial\n documentation for the MPesa API. Most part of this documentation is a duplication of \nSafaricom's documentation which is in PDF\n.\n\n\nPreamble\n\n\nFrom \nSafaricom's website\n:\n\n\n\n\nThe new M-PESA platform dubbed G2 (for M-PESA 2nd generation platform) offers versatile integration capabilities that our development partners can take advantage of, to create excellent M-PESA journeys across the different industries they serve. This was a key factor in moving to the new platform. We have been consolidating the different interfaces our developers have expressed interest in to enable innovation around M-PESA. As expected, most of these are about the payment journeys, covering both disbursements (Business to Customers \u2013 B2C) and service payments (Customer to Business \u2013 C2B and Business to Business \u2013 B2B). These and other features are now available via secure Application Programming Interfaces (APIs) that allow for third party applications to easily plug into M-PESA.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/#preamble", 
+            "text": "From  Safaricom's website :   The new M-PESA platform dubbed G2 (for M-PESA 2nd generation platform) offers versatile integration capabilities that our development partners can take advantage of, to create excellent M-PESA journeys across the different industries they serve. This was a key factor in moving to the new platform. We have been consolidating the different interfaces our developers have expressed interest in to enable innovation around M-PESA. As expected, most of these are about the payment journeys, covering both disbursements (Business to Customers \u2013 B2C) and service payments (Customer to Business \u2013 C2B and Business to Business \u2013 B2B). These and other features are now available via secure Application Programming Interfaces (APIs) that allow for third party applications to easily plug into M-PESA.", 
+            "title": "Preamble"
+        }, 
+        {
+            "location": "/b2b/introduction/", 
+            "text": "Source:\n M-PESA / Developer Guide - B2B Interface, v 0.3 (April 24, 2015) (c) Safaricom\n\n\n\n\nScope\n\n\nThe present document specifies the real time B2B Web Service aspects of the interface. All aspects of B2B Web Service are defined here, these being:\n\n\n\n\nMessage Flow Description\n\n\nDataTypeDefinition\n\n\nWeb Service Interface Definition\n\n\nTransactionTypesdescription\n\n\nWSDL for this specification\n\n\nExample\n\n\n\n\nOverview - API\n\n\nThis document details the interface specification for a real time M-Pesa transaction API delivered within the MPesa Core API Framework. The Core API defines an abstract model for API requests which includes 4 distinct parties to API operations, as well as a generic set of API operation parameters.", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/b2b/introduction/#scope", 
+            "text": "The present document specifies the real time B2B Web Service aspects of the interface. All aspects of B2B Web Service are defined here, these being:   Message Flow Description  DataTypeDefinition  Web Service Interface Definition  TransactionTypesdescription  WSDL for this specification  Example", 
+            "title": "Scope"
+        }, 
+        {
+            "location": "/b2b/introduction/#overview-api", 
+            "text": "This document details the interface specification for a real time M-Pesa transaction API delivered within the MPesa Core API Framework. The Core API defines an abstract model for API requests which includes 4 distinct parties to API operations, as well as a generic set of API operation parameters.", 
+            "title": "Overview - API"
+        }, 
+        {
+            "location": "/b2b/message_flow/", 
+            "text": "", 
+            "title": "Message Flow Description"
+        }, 
+        {
+            "location": "/b2b/data_type_definition/", 
+            "text": "", 
+            "title": "Data Type Definition"
+        }, 
+        {
+            "location": "/b2b/web_service_interface/", 
+            "text": "", 
+            "title": "Web Service Interface"
+        }, 
+        {
+            "location": "/b2b/transaction_types/", 
+            "text": "", 
+            "title": "Transaction Types"
+        }, 
+        {
+            "location": "/b2b/examples/", 
+            "text": "", 
+            "title": "Examples"
+        }
+    ]
+}
