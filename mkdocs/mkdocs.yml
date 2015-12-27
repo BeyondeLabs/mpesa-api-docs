@@ -1,0 +1,14 @@
+site_name: MPESA API Documentation
+
+pages:
+- Introduction: index.md
+- B2B Interface:
+    - 'Introduction': 'b2b/introduction.md'
+    - 'Message Flow Description': 'b2b/message_flow.md'
+    - 'Data Type Definition': 'b2b/data_type_definition.md'
+    - 'Web Service Interface': 'b2b/web_service_interface.md'
+    - 'Transaction Types': 'b2b/transaction_types.md'
+    - 'Examples': 'b2b/examples.md'
+
+theme: readthedocs
+
