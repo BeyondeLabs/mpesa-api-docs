@@ -25,6 +25,10 @@ You know, it takes a village.
 
 
 ## Disclaimer
-This project does not in any way wish to infringe Safaricom's intellectual property; matter of fact, we think we are making their work a little easier.
+This project does not in any way wish to infringe Safaricom's intellectual property; matter of fact, we think we are making Safaricom's work a little easier.
+
+**It's important to note here that all the copyright belongs to Safaricom**
+
+This is purely an **unofficial** documentation, so it will be always good to check out the [original docs](http://www.safaricom.co.ke/images/Downloads/Resources_Downloads/M-PESA_API_Guide_download.zip) for any updates. We will however try our best to keep this docs as current and accurate as possible.
 
 In case of any issues, please reach out to **hello@beyon.de** 
