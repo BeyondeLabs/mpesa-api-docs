@@ -25,7 +25,7 @@ You know, it takes a village.
 
 
 ## Disclaimer
-This project does not in any way wish to infringe Safaricom's intellectual property; matter of fact, we think we are making Safaricom's work a little easier.
+This project does not in any way wish to infringe Safaricom's intellectual property.
 
 **It's important to note here that all the copyright belongs to Safaricom**
 
