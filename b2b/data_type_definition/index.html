@@ -81,6 +81,59 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#31-identitytype-enumeration">3.1 IdentityType enumeration</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#32-identifiertype-enumeration">3.2 IdentifierType enumeration</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#33-parametertype-structure">3.3 ParameterType structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#34-parameters-structure">3.4 Parameters structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#35-referencedata-structure">3.5 ReferenceData structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#36-transaction-structure">3.6 Transaction structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#37-caller-structure">3.7 Caller structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#38-initiator-structure">3.8 Initiator structure</a></li>
+                
+                    <li><a class="toctree-l4" href="#381-password-encryption">3.8.1 Password Encryption</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#39-primaryparty-structure">3.9 PrimaryParty structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#310-receiverparty-structure">3.10 ReceiverParty structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#311-accessdevice-structure">3.11 AccessDevice structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#312-identity-structure">3.12 Identity structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#313-request-structure">3.13 Request structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#314-response-structure">3.14 Response structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#315-resultparameters-structure">3.15 ResultParameters structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#316-result-structure">3.16 Result structure</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#317-result-code">3.17 Result code</a></li>
+                
+            
             </ul>
         
     </li>
@@ -146,7 +199,983 @@
           <div role="main">
             <div class="section">
               
-                
+                <h2 id="31-identitytype-enumeration">3.1 <code>IdentityType</code> enumeration</h2>
+<p>List of <code>IdentityType</code> values.</p>
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td>Customer</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>SPOperator</td>
+</tr>
+<tr>
+<td>3000</td>
+<td>OrganizationOperator</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>Organization</td>
+</tr>
+<tr>
+<td>6000</td>
+<td>Till</td>
+</tr>
+<tr>
+<td>8000</td>
+<td>SP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="32-identifiertype-enumeration">3.2 <code>IdentifierType</code> enumeration</h2>
+<p>List of <code>IdentityType</code> values.</p>
+<table>
+<thead>
+<tr>
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>MSISDN</td>
+</tr>
+<tr>
+<td>2</td>
+<td>TillNumber</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SPShortCode</td>
+</tr>
+<tr>
+<td>4</td>
+<td>OrganizationShortCode</td>
+</tr>
+<tr>
+<td>5</td>
+<td>IdentityID</td>
+</tr>
+<tr>
+<td>6</td>
+<td>O2CLink</td>
+</tr>
+<tr>
+<td>9</td>
+<td>SPOperatorCode</td>
+</tr>
+<tr>
+<td>10</td>
+<td>POSNumber</td>
+</tr>
+<tr>
+<td>10</td>
+<td>OrganizationOperatorUserName</td>
+</tr>
+<tr>
+<td>12</td>
+<td>OrganizationOperatorCode</td>
+</tr>
+<tr>
+<td>13</td>
+<td>VoucherCode</td>
+</tr>
+</tbody>
+</table>
+<h2 id="33-parametertype-structure">3.3 <code>ParameterType</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Key</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates a parameter name.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates a parameter value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="34-parameters-structure">3.4 <code>Parameters</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameter</td>
+<td><code>ParameterTyp e[1..unbounde d]</code></td>
+<td>No</td>
+<td>It is used to carry specific parameters for specific transaction or business operation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="35-referencedata-structure">3.5 <code>ReferenceData</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ReferenceItem</td>
+<td><code>ParameterTyp e[1..unbounde d]</code></td>
+<td>No</td>
+<td>It is used carry some reference data that MM need not analyze but need to record it into transaction log.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="36-transaction-structure">3.6 <code>Transaction</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CommandID</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td><ul>The unique identifier of transaction/business operation. Max length is 64. eg:<li><em>BusinessBuyGoods</em></li><li><em>BusinessPayBill</em></li><li><em>DisburseFundsToBusiness</em></li><li><em>BusinessToBusinessTransfer</em></li><li><em>BusinessTransferFromMMFToUtility</em></li><li><em>BusinessTransferFromUtilityToMMF</em></li><li><em>MerchantToMerchantTransfer</em></li><li><em>MerchantTransferFromMerchantToWorking</em></li><li><em>MerchantTransferFromWorkingToMerchant</em></li><li><em>OrgBankAccountWithdrawal</em></li><li><em>OrgRevenueSettlement</em></li><li><em>MerchantServicesMMFAccountTransfer</em></li><li><em>AgencyFloatAdvance</em></li></ul></td>
+</tr>
+<tr>
+<td>LanguageCode</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>It indicates language. It’s reserved.</td>
+</tr>
+<tr>
+<td>OriginatorConv ersationID</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>The unique identifier of the request message generated by third party. It is used to identify a request between the third party and MM. Max length is 128. Field must start with the Organisation short and name of organisation. Eg. <code>232323_KCBOrg_XXXXXX</code>. <code>XXXXX</code> must be unique for every transaction.</td>
+</tr>
+<tr>
+<td>ConversationID</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>The unique identifier generated by MM for a previous request message. It is used to support communication multi-times between the third party and MM for one operation/transaction.</td>
+</tr>
+<tr>
+<td>Remark</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>The remark information about this operation. Max length is 255</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Parameters</td>
+<td>Yes</td>
+<td><p>It is used to carry specific parameters for specific transaction or business operation.</p><p>If the element EncryptedParameters presents, this parameter should not present.</p></td>
+</tr>
+<tr>
+<td>ReferenceData</td>
+<td>ReferenceData</td>
+<td>Yes</td>
+<td>It is used carry some reference data that MM need not analyze but need to record it into transaction log.</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>The timestamp generated by the third party.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="37-caller-structure">3.7 <code>Caller</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CallerType</td>
+<td><code>xsd:integer</code></td>
+<td>No</td>
+<td>Indicates the type of the caller: 2 - APICaller, 3 - Other(Reserved)</td>
+</tr>
+<tr>
+<td>ThirdPartyID</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>he unique identifier of a third party system defined in MM. It indicates the third party which initiates the request. Max length is 20</td>
+</tr>
+<tr>
+<td>Password</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>This security credential of the ThirdPartyID defined in MM. If the password feature for third party is used in MM, then this parameter must be presented in the request message.</td>
+</tr>
+<tr>
+<td>CheckSum</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>Currently it is unused. It is reserved for API security.</td>
+</tr>
+<tr>
+<td>ResultURL</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>It indicates the destination URL where Broker should send the result message to.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="38-initiator-structure">3.8 <code>Initiator</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IdentifierType</td>
+<td>IdentifierType</td>
+<td>No</td>
+<td>It indicates the identifier type of the initiator. The value of this parameter must be a valid identifier type supported by MM.</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates the identifier of the initiator. Its value must match the inputted value of the parameter IdentifierType.</td>
+</tr>
+<tr>
+<td>SecurityCredential</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates the security credential of the initiator. Its value must match the inputted value of the parameter IdentifierType.</td>
+</tr>
+<tr>
+<td>ShortCode</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td><p>When the initiator is an organization operator, this parameter must be present in the request to indicate which organization the operator belongs to.</p><p>If the initiator is not an organization operator, this parameter should not be present.</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="381-password-encryption">3.8.1 Password Encryption</h3>
+<p>The Caller will be required to confirm its authority to act on behalf of the Initiator (in other words, a specific M-PESA organisation) by presenting the user name and password for the Initiator, the latter encrypted with the public key from an X509 certificate issued to the Initiator specifically for this purpose.</p>
+<p>The following algorithm must be followed by the Initiator to encrypt passwords: </p>
+<p>First, create the block of data to be encrypted:</p>
+<ul>
+<li>Write the unencrypted password value.</li>
+<li>Then, encrypt the block of data created in step 1 with the public portion of the password key certificate. Use the RSA algorithm, and use PKCS #1.5 padding (not OAEP), and add the result to the encrypted stream – this becomes the encrypted password which is submitted via the API.</li>
+<li>Convert the resulting encrypted byte array into a string using base64 encoding. Present this base64 encoded string in the API request as the initiator SecurityCredential value.</li>
+</ul>
+<h2 id="39-primaryparty-structure">3.9 <code>PrimaryParty</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IdentifierType</td>
+<td>IdentifierType</td>
+<td>No</td>
+<td>It indicates the identifier type of the primary party. The value of this parameter must be a valid identifier type supported by MM and must match the inputted value of the parameter IdentityType.</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates a parameter value.</td>
+</tr>
+<tr>
+<td>ShortCode</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>It is reserved</td>
+</tr>
+</tbody>
+</table>
+<h2 id="310-receiverparty-structure">3.10 <code>ReceiverParty</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IdentifierType</td>
+<td>IdentifierType</td>
+<td>No</td>
+<td>It indicates the identifier type of the recipient party. The value of this parameter must be a valid identifier type supported by MM.</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates the identifier of the recipient party. Its value must match the inputted value of the parameter IdentifierType.</td>
+</tr>
+<tr>
+<td>ShortCode</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td><p>When the receiver party is an organization operator or a Till, this parameter must be present in the request to indicate which organization the receiver party belongs to.</p><p>If the receiver party is not an organization operator or a Till, this parameter should not be present.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="311-accessdevice-structure">3.11 <code>AccessDevice</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IdentifierType</td>
+<td>IdentifierType</td>
+<td>No</td>
+<td>It indicates the identifier type of the access device.</td>
+</tr>
+<tr>
+<td>Identifier</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates the identifier of the access device. Its value must match the inputted value of parameter IdentifierType</td>
+</tr>
+</tbody>
+</table>
+<h2 id="312-identity-structure">3.12 <code>Identity</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caller</td>
+<td>Caller</td>
+<td>No</td>
+<td>It indicates the third party which initiates the request</td>
+</tr>
+<tr>
+<td>Initiator</td>
+<td>Initiator</td>
+<td>No</td>
+<td><ul>It indicates the identity who makes the request. An initiator must be one of the following identity types:<li>SP operator</li><li>Organizationoperator(11)</li></ul><p>NOTE: The value <code>11</code>(Organization Operator) or <code>14</code>(SP Operator) will be used for all the services in this document.</p></td>
+</tr>
+<tr>
+<td>PrimartyParty</td>
+<td>PrimartyParty</td>
+<td>Yes</td>
+<td>If business operation/action, this element is not present; if transaction, this can be either the debit party or the credit party according to the transaction type.</td>
+</tr>
+<tr>
+<td>ReceiverParty</td>
+<td>ReceiverParty</td>
+<td>Yes</td>
+<td>If business operation/action, this is the affected party; if transaction, it is the opposite party to the PrimaryParty</td>
+</tr>
+<tr>
+<td>AccessDevice</td>
+<td>AccessDevice</td>
+<td>Yes</td>
+<td>It indicates the access device which the initiator uses to initiate the request.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="313-request-structure">3.13 <code>Request</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transaction</td>
+<td>Transaction</td>
+<td>No</td>
+<td>It indicates a transaction.</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>Identity</td>
+<td>No</td>
+<td>This section is used to specify all identities involved in the request</td>
+</tr>
+<tr>
+<td>KeyOwner</td>
+<td><code>xsd:integer</code></td>
+<td>No</td>
+<td>It indicates which Key is used to encrypt the elements Initator.SecurityCredential and the EncryptedParameters. Its value are enumerated as follows: 1 - the API Caller's Key, 2 - the Initiator's Key</td>
+</tr>
+</tbody>
+</table>
+<h2 id="314-response-structure">3.14 <code>Response</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResponseCode</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates whether MM accepts the request or not.</td>
+</tr>
+<tr>
+<td>ResponseDesc</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>Its value is a description for the parameter ResultCode.</td>
+</tr>
+<tr>
+<td>ConversationID</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>The unique identifier generated by M-Pesa for the request message.</td>
+</tr>
+<tr>
+<td>OriginatorConversationID</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>The unique identifier generated by the third party for the request message.</td>
+</tr>
+<tr>
+<td>ServiceStatus</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>It indicates the MM service status.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="315-resultparameters-structure">3.15 <code>ResultParameters</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResultParameter</td>
+<td><code>ParameterType [0...unbounded ]</code></td>
+<td>Yes</td>
+<td>It is used to carry specific parameters for specific transaction or business operation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="316-result-structure">3.16 <code>Result</code> structure</h2>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResultType</td>
+<td><code>xsd:integer</code></td>
+<td>Yes</td>
+<td>0: completed 1: waiting for further messages</td>
+</tr>
+<tr>
+<td>ResultCode</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>It indicates whether MM processes the request successfully or not. Max length is 10</td>
+</tr>
+<tr>
+<td>ResultDesc</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>Its value is a description for the parameter ResultCode.Max length is 1024</td>
+</tr>
+<tr>
+<td>OriginatorConversationID</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>The unique identifier of the request message generated by third party. Its value comes from the request message.</td>
+</tr>
+<tr>
+<td>ConversationID</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>The unique identifier generated by MM for a request</td>
+</tr>
+<tr>
+<td>TransactionID</td>
+<td><code>xsd:string</code></td>
+<td>Yes</td>
+<td>It’s only for transaction. When the request is a transaction request, MM will generate a unique identifier for the transaction.</td>
+</tr>
+<tr>
+<td>ResultParameters</td>
+<td>ResultParameters</td>
+<td>Yes</td>
+<td>It is used to carry specific parameters for specific transaction or business operation.</td>
+</tr>
+<tr>
+<td>ReferenceData</td>
+<td>ReferenceData</td>
+<td>Yes</td>
+<td>It comes from the request message</td>
+</tr>
+</tbody>
+</table>
+<h2 id="317-result-code">3.17 <code>Result</code> code</h2>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Error Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Success</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Insufficient Funds</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Less Than Minimum Transaction Value</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>3</td>
+<td>More Than Maximum Transaction Value</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Would Exceed Daily Transfer Limit</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Would Exceed Minimum Balance</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Unresolved Primary Party</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Unresolved Receiver Party</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Would Exceed Maxiumum Balance</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Debit Account Invalid</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Credit Account Invaliud</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Unresolved Debit Account</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Unresolved Credit Account</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Duplicate Detected</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Internal Failure</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Initiator Credential Check Failure</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Message Sequencing Failure</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Unresolved Initiator</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Initiator to Primary Party Permission Failure</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Initiator to Receiver Party Permission Failure</td>
+<td>ApiResult</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Request schema validation error</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Missing mandatory fields</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Cannot communicate with Caller</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Traffic blocking condition in place</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Success</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000000</td>
+<td>Request was cached, waiting for resending</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000001</td>
+<td>The system is overload</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000002</td>
+<td>Throttling error</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000003</td>
+<td>Exceed the limitation of the LICENSE</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000004</td>
+<td>Internal Server Error</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000005</td>
+<td><p>Invalid input value:%1</p><p>%1 indicates the parameter’s name.</p></td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000006</td>
+<td>SP’s status is abnormal</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000007</td>
+<td>Authentication failed</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000008</td>
+<td>Service’s status is abnormal</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000008</td>
+<td>Service’s status is abnormal</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000009</td>
+<td>API’s status is abnormal</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000010</td>
+<td>Insufficient permissions</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000011</td>
+<td>Exceed the limitation of request rate</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000012</td>
+<td>Insufficient balance</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000013</td>
+<td>No route</td>
+<td>ApiResponse</td>
+</tr>
+<tr>
+<td>100000014</td>
+<td><p>Missing mandatory parameter:%1</p><p>%1 indicates the parameter’s name.</p>ApiResponse</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The following table lists result codes and result descriptions which are provided to the third party. These may be commincated either in the synchronous <code>ApiResponse</code> message, or in the asynchronous <code>ApiResult</code> message.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><p><strong>Success</strong></p><p>This is indicated for both ApiResponse and ApiResult messages. An ApiResponse value of 0 indicates that the request has passed basic validation tests and been passed on to the core system for further processing. An ApiResult value of 0 means that the requested financial transaction has been completed successfully.</p></td>
+</tr>
+<tr>
+<td>1</td>
+<td><p><strong>InsufficientFunds</strong></p><p>Typically indicates that the primary party does not have enough money to complete the requested financial transaction. In the case of the B2C API, this means that the business organisation does not have enough money in its utility account.</p><p>This is returned by the <code>ApiResult</code> and represented internally as a transaction reason.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>LessThanMinimumTransactionValue</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><p><strong>MoreThanMaximumTransactionValue</strong></p><p>Each of these potential failures derive from the rules which govern MPesa financial transactions. In the case of the B2C API, these are taken from <code>DefaultBusinessUtilityAccount</code> rules, which specify a lower bound of 10 KE shillings and an upper bound of 70000. For promotion payments and salary payments to unregistered users, the upper limit is lower: 35000. Likewise, the lower bound for these 2 transactions is also different: 101 rather than 10.</p><p>These are both returned by the <code>ApiResult</code> and represented internally as a transaction reason.</p></td>
+</tr>
+<tr>
+<td>4</td>
+<td><p><strong>WouldExceedDailyTransferLimit</strong></p><p>This is a limit on daily activity. For the business organisation, this is very high: 100000000 KE shillings. It is much more likely that this rule will apply to the customer, where the limit is 140000 KE shillings.</p><p>This is returned by the ApiResult and represented internally as a transaction reason.</p></td>
+</tr>
+<tr>
+<td>5</td>
+<td><p><strong>WouldExceedMinimumBalance</strong></p><p>This rule is rather confusingly named – it actually means that a transaction would bring the business organisations utility account bellow the required minimum – which is currently 0.</p><p>This is returned by the <code>ApiResult</code> and represented internally as a transaction reason. It is computed during execution of the financial transaction.</p></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>UnresolvedPrimaryParty</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td><p><strong>UnresolvedReceiverParty</strong></p><p>The primary party or receiver party cannot be associated with an MPesa identity. For transactions (such as promotion payment and salary payment) which are supported for unregistered users, the unresolved receiver party rule is not applied.</p><p>These are returned in the <code>ApiResult</code> and checked before the linked financial transaction is created.</p></td>
+</tr>
+<tr>
+<td>8</td>
+<td><p><strong>WouldExceedMaximumBalance</strong></p><p>For the B2C API, this applies to the recipient MMF customer – the limit here is 100,000 KE shillings.</p><p>This is returned by the ApiResult and represented internally as a transaction reason. It is computed during execution of the financial transaction.</p></td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>LessThanMinAirtimeValue</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td><p><strong>MoreThanMaxAirtimeValue</strong></p><p>Neither of these apply to B2C API operations.</p></td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>DebitAccountInvalid</strong></td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>CreditAccountInvalid</strong></td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>UnresolvedDebitAccount</strong></td>
+</tr>
+<tr>
+<td>14</td>
+<td><p><strong>UnresolvedCreditAccount</strong></p><p>These are all existing failure transaction reasons for B2C financial transactions – they would be issued to the caller in the ApiResult message. The latter 2 in particular are unlikely to occur, as the request would be rejected by Core API specific checks before the request reached the accounting engine.</p></td>
+</tr>
+<tr>
+<td>15</td>
+<td><p><strong>DuplicateDetected</strong></p><p>Currently, any requests which presents an originator conversation id which has been seen before will be rejected. This rule will need to be reconsidered in contexts which require multi-stage conversations or multiple Callers. This check (along with the message expiry check) is the first thing done by the transaction processor when handling an API request. The outcome is reported in the <code>ApiResult</code> message.</p></td>
+</tr>
+<tr>
+<td>16</td>
+<td><p><strong>PayUtilityInvalidAccountNumberFormat</strong></p><p>Does not apply to the B2C API operations.</p></td>
+</tr>
+<tr>
+<td>17</td>
+<td><p><strong>InternalFailure</strong></p><p>A catch all for failures which are not identified more specifically – this can occur in either the <code>ApiResponse</code> or <code>ApiResult</code> – although the intent is to replace any such error with a more precise message.</p></td>
+</tr>
+<tr>
+<td>18</td>
+<td><p><strong>InitiatorCredentialCheckFailure</strong></p><p>The password check for the initiator failed, either because the presented password is wrong, or something has gone wrong in the encryption or decryption steps. This is issued in the <code>ApiResult</code> before the creation of a financial transaction.</p></td>
+</tr>
+<tr>
+<td>19</td>
+<td><p><strong>ApiRequestMessageExpiryFailure</strong></p><p>Initiators have the option to specify a request timestamp. If the gap between this value and the time at which the message is received by the transaction processor is too great, then the request is rejected. The specific interval is configured separately for each API operation (and indeed, for each API operation stage). This is the first check performed on an API request arriving at the transaction processor, and as such is included in the <code>ApiResult</code> message.</p></td>
+</tr>
+<tr>
+<td>20</td>
+<td><p><strong>UnresolvedInitiator</strong></p><p>The initiator username presented with the request cannot be found. This is included in the <code>ApiResult</code>.</p></td>
+</tr>
+<tr>
+<td>21</td>
+<td><p><strong>InitiatorToPrimaryPartyPermissionFailure</strong></p><p>The initiator presented does not have the right to issue requests for the specified primary party (as established during creation of the initiator on the admin web site). The is part of the <code>ApiResult</code>, and computed prior to issuing a financial transaction.</p></td>
+</tr>
+<tr>
+<td>22</td>
+<td><p><strong>InitiatorStatusCheckFailure</strong></p><p>The presented initiator username can be received, but the initiator is not currently active. This fact is returned in the <code>ApiResult</code>.</p></td>
+</tr>
+<tr>
+<td>23</td>
+<td><p><strong>RequestSchemaValidationError</strong></p><p>Incoming API requests are validated against the schema defined in <code>CPSInterface_Request.xsd</code>. This is part of the ApiResponse message – the details of the validation error are included in the response.</p></td>
+</tr>
+<tr>
+<td>24</td>
+<td><p><strong>MissingRequestParameters</strong></p><p>Required input parameters are defined for each type of API operation. If these are missing, then this is issued in the <code>ApiResult</code> message. The names of the missing parameters are included in the result parameters field.</p></td>
+</tr>
+<tr>
+<td>25</td>
+<td><p><strong>InvalidRequestParameters</strong></p><p>If all required parameters are presented, then validation checks are performed. Specifically, the parameter is checked to see if it can be converted to the intended type, and then checked against (optional) configuration regular expression based validation rules. For the B2C API, only the type check (i.e the amount specified is a valid decimal) is performed. Failures are indicated in the <code>ApiResult</code> message, with the details included in the result parameters.</p></td>
+</tr>
+<tr>
+<td>26</td>
+<td><p><strong>SystemTooBusy</strong></p><p>Included in the <code>ApiResponse</code> message if a traffic blocking condition is in place. See section 5.1 for more detail.</p></td>
+</tr>
+<tr>
+<td>28</td>
+<td><p><strong>InitiatorAllowedOperationCheckFailure</strong></p><p>Upon creation, initiators are assigned permissions for specific API operations – if the operation specified in the request message is not included in this list, then this <code>ApiResult</code> message is received.</p></td>
+</tr>
+<tr>
+<td>29</td>
+<td><p><strong>InvalidCommand</strong></p><p>The command specified in the request is not defined – this is part of the <code>ApiResult</code>.</p></td>
+</tr>
+<tr>
+<td>30</td>
+<td><p><strong>ErrorSerializingRequest</strong></p><p>After XML schema validation, the API attempts to convert the XML request into an internal ApiRequest object – any failures result in this <code>ApiResponse</code> message. The details of the exception are included.</p></td>
+</tr>
+<tr>
+<td>31</td>
+<td><p><strong>InitiatorNotSpecified</strong></p><p>The initiator username is not specified, or not specified in a way that can be parsed.</p></td>
+</tr>
+<tr>
+<td>32</td>
+<td><p><strong>ErrorSerializingRequest</strong></p><p>The presented identifier for the initiator is not a username.</p></td>
+</tr>
+<tr>
+<td>33</td>
+<td><strong>PrimaryPartyNotSpecified</strong></td>
+</tr>
+<tr>
+<td>34</td>
+<td><strong>PrimaryPartyIdentifierInvalid</strong></td>
+</tr>
+<tr>
+<td>35</td>
+<td><strong>ReceiverPartyNotSpecified</strong></td>
+</tr>
+<tr>
+<td>36</td>
+<td><p><strong>ReceiverPartyIdentifierInvalid</strong></p><p>In all these case, one of the API parties is either missing from the request, or has been presented with the wrong identifier type., This kind of failure is indicated in the <code>ApiResult</code> message.</p></td>
+</tr>
+<tr>
+<td>37</td>
+<td><p><strong>MissingApiCommand</strong></p><p>No command is included in the request – in general this problem should be captured by the XML schema validation, but if it is not this <code>ApiResult</code> message is issued.</p></td>
+</tr>
+<tr>
+<td>38</td>
+<td><strong>InvalidConversationId</strong></td>
+</tr>
+<tr>
+<td>39</td>
+<td><p><strong>UnknownConversationId</strong></p><p>Not currently checked for – this will take place for multi-stage conversations.</p></td>
+</tr>
+<tr>
+<td>40</td>
+<td><strong>InvalidParameterDefinition</strong></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
