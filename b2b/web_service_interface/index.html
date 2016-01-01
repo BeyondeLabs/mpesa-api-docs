@@ -88,6 +88,37 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#41-interface-requestmgrporttype">4.1 Interface: RequestMgrPortType</a></li>
+                
+                    <li><a class="toctree-l4" href="#411-operation-genericapirequest">4.1.1 Operation: GenericAPIRequest</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#42-interface-resultmgrporttype">4.2 Interface: ResultMgrPortType</a></li>
+                
+                    <li><a class="toctree-l4" href="#421-operation-genericapiresult">4.2.1 Operation: GenericAPIResult</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#43-interface-queuetimeoutnotificationport">4.3 Interface: QueueTimeoutNotificationPort</a></li>
+                
+                    <li><a class="toctree-l4" href="#431-operation-notifyqueuetimeout">4.3.1 Operation: notifyQueueTimeout</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#44-interface-querytransactionport">4.4 Interface: QueryTransactionPort</a></li>
+                
+                    <li><a class="toctree-l4" href="#441-operation-querytransaction">4.4.1 Operation: queryTransaction</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#45-interface-management">4.5 Interface: Management</a></li>
+                
+                    <li><a class="toctree-l4" href="#451-operation-changepassword">4.5.1 Operation: changePassword</a></li>
+                
+                    <li><a class="toctree-l4" href="#452-input-message-changepassword">4.5.2 Input Message: changePassword</a></li>
+                
+                    <li><a class="toctree-l4" href="#453-output-message-changepasswordresponse">4.5.3 Output Message: changePasswordResponse</a></li>
+                
+                    <li><a class="toctree-l4" href="#454-response-code">4.5.4 Response Code</a></li>
+                
+            
             </ul>
         
     </li>
@@ -146,7 +177,496 @@
           <div role="main">
             <div class="section">
               
-                
+                <h2 id="41-interface-requestmgrporttype">4.1 Interface: <code>RequestMgrPortType</code></h2>
+<h3 id="411-operation-genericapirequest">4.1.1 Operation: <code>GenericAPIRequest</code></h3>
+<p>The 3rd party invokes this operation to send a B2B request.</p>
+<h4 id="4111-message-header-requestsoapheader">4.1.1.1 Message Header: <code>RequestSOAPHeader</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpId</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td>SP ID. This is the Service Provider Identifier that is allocated by the Broker to the 3rd party. [Example] 000201</td>
+</tr>
+<tr>
+<td>SpPassword</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>This is an encrypted form of the SP password issued to an SP when an account is created on the Broker.</p><p>The encrypted password is a Base64 encoded string of the SHA- 256 hash of the concatenation of the spId, password and the timeStamp as illustrated below:</p><p>Given the following parameters:<br/>spId: 601399 <br/>password: spPassword <br/>timestamp: 20130702212854</p><p>spPassword = BASE64(SHA-256(spId + Password + timeStamp)), e.g. <br/><code>spPassword = BASE64(SHA- 256(601399spPassword20130702212854)</code><br/>[Example] <code>e6434ef249df55c7a21a0b45758a39bb</code></p></td>
+</tr>
+<tr>
+<td>ServiceId</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>Service ID.<br/>This is the Service Identifier that is allocated by the Broker for every service created.<br/>[Example] 3500001000012</p></td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>Time stamp (UTC time).<br/>The value is required during SHA-256 encryption for spPassword.<br/>NOTE: If the <code>spPassword</code> parameter must be set, this parameter is mandatory.<br/>[Format] yyyyMMddHHmmss <br/>[Example] 20100731064245</p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4112-input-message-requestmsg">4.1.1.2 Input Message: <code>RequestMsg</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RequestMsg</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td>Request Message from 3rd party. Its value should be an instance of Request Type and a CDATA</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong></p>
+<ul>
+<li>If there is no configuration for notification URL on Broker side, which indicates the callback url for accepting notification of GenericAPIResult, the <code>ResultURL</code> parameter inside Identity tag must present.</li>
+<li>If there is no configuration for notification URL on Broker side, which indicates the callback url for accepting notification of cached requests expired, the 3rd party must add a key-pair parameter into <code>ReferenceData</code> and the key is <code>QueueTimeoutURL</code>.</li>
+</ul>
+<h4 id="4113-output-message-responsemsg">4.1.1.3 Output Message: <code>ResponseMsg</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResponseMsg</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td>Response return to 3rd party. Its value should be an instance of Response Type and a CDATA.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-interface-resultmgrporttype">4.2 Interface: <code>ResultMgrPortType</code></h2>
+<h3 id="421-operation-genericapiresult">4.2.1 Operation: <code>GenericAPIResult</code></h3>
+<p>This operation must be implemented by a Web Service at the 3rd party side if it requires notification of the final result for B2B request. It will be invoked by Broker to notify the 3rd party once Broker received the notification from Core API.</p>
+<h4 id="4211-input-message-resultmsg">4.2.1.1 Input Message: <code>ResultMsg</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResultMsg</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td>Request Message from Broker. Its value should be a instance of Result Type and a CDATA.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4212-output-message-responsemsg">4.2.1.2 Output Message: ResponseMsg</h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ResponseMsg</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td>Response return to Broker. Its value should be a instance of Response Type and a CDATA.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="43-interface-queuetimeoutnotificationport">4.3 Interface: <code>QueueTimeoutNotificationPort</code></h2>
+<h3 id="431-operation-notifyqueuetimeout">4.3.1 Operation: <code>notifyQueueTimeout</code></h3>
+<p>This operation must be implemented by a Web Service at the 3rd party side if it requires notification of cached requests are expired. It will be invoked by Broker to notify the 3rd party once cached requests are expired.</p>
+<h4 id="4311-input-message-notifyqueuetimeout">4.3.1.1 Input Message: <code>notifyQueueTimeout</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OriginatorConversationID</td>
+<td><code>xsd:string</code></td>
+<td></td>
+<td>originatorConversationID from the request sent by the 3rd party</td>
+</tr>
+<tr>
+<td>originRequest</td>
+<td><code>xsd:string</code></td>
+<td>No</td>
+<td>Original request without SOAP Header sent by 3rd party. Its value is encoded with base64, when the 3rd party receive the request, it should decode it.</td>
+</tr>
+<tr>
+<td>ExtensionInfo</td>
+<td>Parameters</td>
+<td>Yes</td>
+<td>Extended parameters.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4312-output-message-notifyqueuetimeoutresponse">4.3.1.2 Output Message: notifyQueueTimeoutResponse</h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Result</td>
+<td>Result</td>
+<td>Result</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ExtensionInfo</td>
+<td>Parameters</td>
+<td>Yes</td>
+<td>Extended parameters.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4313-response-code">4.3.1.3 Response Code</h4>
+<table>
+<thead>
+<tr>
+<th>ResponseCode</th>
+<th>ResponseDesc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000000000</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>000000001</td>
+<td>Failed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="44-interface-querytransactionport">4.4 Interface: <code>QueryTransactionPort</code></h2>
+<h3 id="441-operation-querytransaction">4.4.1 Operation: <code>queryTransaction</code></h3>
+<p>The 3rd party invokes this operation to query transaction information.</p>
+<h4 id="4411-message-header-requestsoapheader">4.4.1.1 Message Header: <code>RequestSOAPHeader</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpId</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td><p>SP ID.<br/>It’s allocated by the Broker to the 3rd party.<br/>[Example] 000201</p></td>
+</tr>
+<tr>
+<td>spPassword</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>Encrypted authentication password for partners to access the Broker.</p><p>The value is a character string encrypted from <code>spId + Password + timeStamp</code> by SHA-256. The encryption formula is as follows: spPassword =BASE64(SHA-256(spId + Password + timeStamp))</p><p>In the preceding formula: timeStamp: value of timeStamp.Password: authentication password for 3rd parties to access the Broker. The value is allocated by the Broker.</p><p><strong>NOTE:</strong><br/>The authentication modes include SPID&amp;Password, SPID&amp;IP&amp;Password, and SPID&amp;IP. When the authentication mode is SPID&amp;Password or SPID&amp;IP&amp;Password, this parameter is mandatory.<br/>[Example] e6434ef249df55c7a21a0b45758a39bb</p></td>
+</tr>
+<tr>
+<td>ServiceId</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>Service ID.<br/>The value is allocated by the Broker to the 3rd party.<br/>[Example] 3500001000012</p></td>
+</tr>
+<tr>
+<td>timeStamp</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>Time stamp (UTC time).<br/>The value is required during SHA-256 encryption for spPassword.</p><p><strong>NOTE:</strong><br/>If the spPassword parameter must be set, this parameter is mandatory.<br/>[Format] yyyyMMddHHmmss [Example] 20100731064245</p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4412-input-message-querytransaction">4.4.1.2 Input Message: <code>queryTransaction</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>originatorConversationID</td>
+<td><code>xsd:string</code></td>
+<td></td>
+<td>The unique identifier of the request message generated by third party. It is used to identify a request between the third party and MM. Max length is 128</td>
+</tr>
+<tr>
+<td>extensionInfo</td>
+<td>Parameters</td>
+<td>Yes</td>
+<td>Extended parameters.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 4-1</strong> extensionInfo Description</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>queryDate</td>
+<td>Yes</td>
+<td>String(20)</td>
+<td><p>The date of the original conversation. Format is yyyyMMddHHmmss, for example: 20131230134412</p><p>Note: <br/>If this parameter does not present, it will cost more time to get the result.</p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4413-output-message-querytransactionresponse">4.4.1.3 Output Message: <code>queryTransactionResponse</code></h4>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Result</td>
+<td>Response</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>submitApiRequestList</td>
+<td><code>xsd:string[0-unbounded]</code></td>
+<td>Yes</td>
+<td>Requests sent by the 3rd party. Its value is the requests sent by the 3rd party with base64 encoded.</td>
+</tr>
+<tr>
+<td>submitApiResponseList</td>
+<td><code>xsd:string[0-unbounded]</code></td>
+<td>Yes</td>
+<td>Responses returned from the Broker. Its value is the responses returned from the Broker with base64 encoded.</td>
+</tr>
+<tr>
+<td>submitApiResultList</td>
+<td><code>xsd:string[0-unbounded]</code></td>
+<td>Yes</td>
+<td>Results sent to the 3rd party. Its value is the requests sent by the Broker with base64 encoded.</td>
+</tr>
+<tr>
+<td>queueTimeOutList</td>
+<td><code>xsd:string[0-unbounded]</code></td>
+<td>Yes</td>
+<td>QueueTimeout requests sent to the 3rd party. Its value is the requests sent by the Broker with base64 encoded.</td>
+</tr>
+<tr>
+<td>extensionInfo</td>
+<td>Parameters</td>
+<td>Yes</td>
+<td>Extended parameters.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4414-response-codes">4.4.1.4 Response Codes</h4>
+<table>
+<thead>
+<tr>
+<th>ResponseCode</th>
+<th>ResponseDesc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000000000</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>100000001</td>
+<td>The system is overload</td>
+</tr>
+<tr>
+<td>100000002</td>
+<td>Throttling error</td>
+</tr>
+<tr>
+<td>100000003</td>
+<td>Exceed the limitation of the LICENSE</td>
+</tr>
+<tr>
+<td>100000004</td>
+<td>Internal Server Error</td>
+</tr>
+<tr>
+<td>100000005</td>
+<td><p>Invalid input value:%1<br/>%1 indicates the parameter’s name.</p></td>
+</tr>
+<tr>
+<td>100000006</td>
+<td>SP’s status is abnormal</td>
+</tr>
+<tr>
+<td>100000007</td>
+<td>Authentication failed</td>
+</tr>
+<tr>
+<td>100000008</td>
+<td>Service’s status is abnormal</td>
+</tr>
+<tr>
+<td>100000010</td>
+<td>Insufficient permissions</td>
+</tr>
+<tr>
+<td>100000014</td>
+<td><p>Missing mandatory parameter:%1 <br/>%1 indicates the parameter’s name.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="45-interface-management">4.5 Interface: <code>Management</code></h2>
+<h3 id="451-operation-changepassword">4.5.1 Operation: <code>changePassword</code></h3>
+<p>The 3rd party invokes this operation to change his password.</p>
+<h3 id="452-input-message-changepassword">4.5.2 Input Message: <code>changePassword</code></h3>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spId</td>
+<td><code>xsd: string</code></td>
+<td>No</td>
+<td><p>SP ID.<br/>It’s allocated by the SAG to the 3rd party. <br/>[Example] 000201</p></td>
+</tr>
+<tr>
+<td>spPassword</td>
+<td><code>xsd: string</code></td>
+<td>Yes</td>
+<td><p>Encrypted authentication password for partners to access the SAG.</p><p>The value is a character string encrypted from <code>spId + Password + timeStamp</code> by SHA-256. The encryption formula is as follows: spPassword =BASE64(SHA- 256(spId + Password + timeStamp))</p><p>In the preceding formula:<br/><code>timeStamp:</code> value of timeStamp.<br/><code>Password:</code> authentication password for 3rd parties to access the SAG. The value is allocated by the SAG.</p><p><strong>NOTE</strong>:<br/>The authentication modes include SPID&amp;Password, SPID&amp;IP&amp;Password, and SPID&amp;IP. When the authentication mode is SPID&amp;Password or SPID&amp;IP&amp;Password, this parameter is mandatory.</p><p>[Example] e6434ef249df55c7a21a0b45758a39bb</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="453-output-message-changepasswordresponse">4.5.3 Output Message: <code>changePasswordResponse</code></h3>
+<table>
+<thead>
+<tr>
+<th>Element name</th>
+<th>Element type</th>
+<th>Optional</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>Result</td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td>extensionInfo</td>
+<td>Parameters</td>
+<td>Yes</td>
+<td>Extended parameters</td>
+</tr>
+</tbody>
+</table>
+<h3 id="454-response-code">4.5.4 Response Code</h3>
+<table>
+<thead>
+<tr>
+<th>ResponseCode</th>
+<th>ResponseDesc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000000000</td>
+<td>Success</td>
+</tr>
+<tr>
+<td>100000001</td>
+<td>The system is overload</td>
+</tr>
+<tr>
+<td>100000002</td>
+<td>Throttling error</td>
+</tr>
+<tr>
+<td>100000003</td>
+<td>Exceed the limitation of the LICENSE</td>
+</tr>
+<tr>
+<td>100000004</td>
+<td>Internal Server Error</td>
+</tr>
+<tr>
+<td>100000005</td>
+<td>Invalid input value:%1<br/>%1 indicates the parameter’s name.</td>
+</tr>
+<tr>
+<td>100000006</td>
+<td>SP’s status is abnormal</td>
+</tr>
+<tr>
+<td>100000007</td>
+<td>Authentication failed</td>
+</tr>
+<tr>
+<td>100000014</td>
+<td>Missing mandatory parameter:%1 <br/>%1 indicates the parameter’s name.</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
