@@ -16,7 +16,7 @@ You know, it takes a village.
 ### How to Contribute
 - Fork this repo
 - Make your additions/edits
-- Do `git rebase` with our `develop` branch (most likely it will be `origin/develop`) -- fix any merge conflict that may arise
+- Do `git rebase` with our `develop` branch -- fix merge conflicts, if any.
 - Send a Pull Request(PR) against our `develop` branch
 
 ### Major areas that need collaboration
