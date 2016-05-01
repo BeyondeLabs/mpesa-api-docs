@@ -34,20 +34,20 @@ AccountReference | String | The third party account reference. (Mandatory) |
 
 Parameter | Type | Description
 ----------- | ------------- | ---------------
-`ResultType` | ResultType | It describes the state of the request, for single staged it would be only completed.
-`ResultCode` | String | Result code
-`ResultDesc` | String | Result description
-`ConversationId` | GUID | M-Pesa conversation id
-`OriginatorConversationId` | String | Third party conversation id
-`TransactionId` | String | It takes the financial transaction unique receipt number.
+`ResultType` | ResultType | It describes the state of the request, for single staged it would be only completed. |
+`ResultCode` | String | Result code |
+`ResultDesc` | String | Result description |
+`ConversationId` | GUID | M-Pesa conversation id |
+`OriginatorConversationId` | String | Third party conversation id |
+`TransactionId` | String | It takes the financial transaction unique receipt number. |
 `Amount` | Decimal | The transactional Amount <br/> e.g. `<Key>Amount</Key><Value>7000.00</Value>`
-`TransCompletedTime` | DateTime | The date time when the transaction was completed. <br/> e.g. `<Key>TransCompletedTime</Key> <Value>20150424170252</Value>`
-`InitiatorAccountCurrentBalance` | Decimal | Amount of money in the initiating organization. <br/> e.g. `<Key>InitiatorAccountCurrentBalance</Key><Value>{Amount={BasicAmount=2714803.00, MinimumAmount=271480300, CurrencyCode=KES}}</Value>`
+`TransCompletedTime` | DateTime | The date time when the transaction was completed. <br/> e.g. `<Key>TransCompletedTime</Key> <Value>20150424170252</Value>` |
+`InitiatorAccountCurrentBalance` | Decimal | Amount of money in the initiating organization. <br/> e.g. `<Key>InitiatorAccountCurrentBalance</Key><Value>{Amount={BasicAmount=2714803.00, MinimumAmount=271480300, CurrencyCode=KES}}</Value>` |
 `DebitPartyCharges` | Decimal | |
-`DebitAccountCurrentBalance` | Decimal | Amount of money in the initiating organization.<br/> e.g. `<Key> DebitAccountCurrentBalance </Key><Value>{Amount={BasicAmount=2714803.00, MinimumAmount=271480300, CurrencyCode=KES}}</Value>`
-`Currency` | String | Currency used. <br/> e.g. `<Key>Currency</Key> <Value>KES</Value>`
-`DebitPartyPublicName` | String | Public name of the Credit Party. <br/> e.g. `<Key>ReceiverPartyPublicName</Key> <Value>888888 - KPLC TEST</Value>`
-`DebitPartyAffectedAccountBalance` | String | Indicates the account balance of all the affected accounts of debit party. <br/>For each account, the fields are presented in the following order and separated by vertical bars (`\|`):  & is used as the separator of different accounts.<br/> e.g. `<Key>DebitPartyAffectedAccountBalance</Key><Value>MMF Organization Account\|KES\|2714803.00\|2714803.00\|0.00\|50000000.00</Value>`
+`DebitAccountCurrentBalance` | Decimal | Amount of money in the initiating organization.<br/> e.g. `<Key> DebitAccountCurrentBalance </Key><Value>{Amount={BasicAmount=2714803.00, MinimumAmount=271480300, CurrencyCode=KES}}</Value>` |
+`Currency` | String | Currency used. <br/> e.g. `<Key>Currency</Key> <Value>KES</Value>` |
+`DebitPartyPublicName` | String | Public name of the Credit Party. <br/> e.g. `<Key>ReceiverPartyPublicName</Key> <Value>888888 - KPLC TEST</Value>` |
+`DebitPartyAffectedAccountBalance` | String | Indicates the account balance of all the affected accounts of debit party. <br/>For each account, the fields are presented in the following order and separated by vertical bars (`\|`):  & is used as the separator of different accounts.<br/> e.g. `<Key>DebitPartyAffectedAccountBalance</Key><Value>MMF Organization Account\|KES\|2714803.00\|2714803.00\|0.00\|50000000.00</Value>` |
 
 
 
